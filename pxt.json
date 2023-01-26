@@ -1,5 +1,6 @@
 {
     "name": "U5 Collaborative Coding Project",
+    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -13,8 +14,7 @@
         "tilemap.g.jres",
         "tilemap.g.ts",
         "main.py",
-        "tutorial-info-cache.json",
-        "main.ts"
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
         "test.ts"
