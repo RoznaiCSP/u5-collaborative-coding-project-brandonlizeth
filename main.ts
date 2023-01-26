@@ -1,7 +1,37 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    volleyball.setPosition(141, 25)
+    batman.setPosition(150, 25)
+    volleyball.destroy()
+    volleyball = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . f 5 1 1 f 1 1 8 f . . . 
+        . . . f 5 1 1 f 1 1 1 1 8 f . . 
+        . . f 5 1 1 1 f 8 8 1 1 1 1 f . 
+        . . f 5 1 1 1 f 8 8 8 8 1 1 f . 
+        . . f 5 5 1 1 1 f 8 8 8 8 1 f . 
+        . . f 5 5 5 1 1 f f f 8 8 8 f . 
+        . . f 5 5 5 f f 5 5 f f 8 8 f . 
+        . . f 1 5 5 f 5 5 5 1 1 f 8 f . 
+        . . f f f f 5 5 5 1 1 1 8 f f . 
+        . . . f 5 5 5 5 1 1 1 8 8 f . . 
+        . . . . f 5 5 1 1 1 8 8 f . . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, batman, randint(-60, -100), randint(-12, 100))
+    volleyball.setBounceOnWall(true)
+})
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    batman.setPosition(150, 60)
+})
+let volleyball: Sprite = null
+let batman: Sprite = null
 let spiderman = sprites.create(assets.image`spiderman`, SpriteKind.Player)
 spiderman.setPosition(35, 60)
 controller.moveSprite(spiderman, 50, 50)
-let batman = sprites.create(img`
+spiderman.setStayInScreen(true)
+batman = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . f . . . . . . . . f . . . 
     . . . f f . . . . . . f f . . . 
@@ -21,6 +51,7 @@ let batman = sprites.create(img`
     `, SpriteKind.Player)
 batman.setPosition(125, 60)
 controller.moveSprite(batman, 50, 50)
+batman.setStayInScreen(true)
 scene.setBackgroundColor(8)
 scene.setBackgroundImage(img`
     ................................................................................................................................................................
@@ -144,7 +175,9 @@ scene.setBackgroundImage(img`
     ................................................................................................................................................................
     ................................................................................................................................................................
     `)
-let volleyball = sprites.create(img`
+info.setScore(0)
+info.player2.setScore(0)
+volleyball = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . f f f f f f f . . . . 
