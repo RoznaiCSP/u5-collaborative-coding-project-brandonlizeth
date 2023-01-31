@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAACIiIiIAAAAi8i8iIiIAICL//yIiIgIiIv8RLyIiAiIi8hHxIiIiIiLyH/EiIiIiIiLy/yIiIiIiIiIiIiIiIiIiIiIiIiIiIiLy/yIiIiIi8h/xIiIiIiLyEfEiIiIiIv8RLyIiAiAi//8iIiICACLyLyIiIgAAACIiIiIAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "spiderman"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
